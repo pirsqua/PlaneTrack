@@ -1,0 +1,46 @@
+[project]
+name = "planetrack"
+version = "0.1.0"
+description = "Live aircraft tracking via OpenSky Network with Bronze/Silver/Gold pipeline"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "pydantic-settings>=2.7",
+    "httpx>=0.28",
+    "apscheduler>=3.10",
+    "azure-storage-file-datalake>=12.19",
+    "pyarrow>=19",
+    "pandas>=2.2",
+]
+
+[project.scripts]
+serve = "uvicorn app.main:app --reload"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.25",
+    "pytest-mock>=3.14",
+    "ruff>=0.9",
+    "mypy>=1.14",
+    "pandas-stubs>=2.2",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["B008"]  # FastAPI Depends() in defaults is intentional
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
