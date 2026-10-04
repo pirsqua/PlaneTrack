@@ -1,4 +1,4 @@
-# PlaneTrack
+# PlaneTracker
 
 Polls the [OpenSky Network](https://opensky-network.org) for live aircraft state vectors, runs them through a Bronze → Silver → Gold pipeline, and persists each layer as Parquet on Azure Data Lake Gen2. A FastAPI app exposes the processed data for querying.
 
@@ -42,7 +42,7 @@ Copy `.env.example` to `.env` and fill in your values. `.env` is gitignored.
 | `OPENSKY_TOKEN_URL` | no | `https://opensky-network.org/api/auth/realms/opensky-network/protocol/openid-connect/token` | OAuth2 token endpoint |
 | `AZURE_ACCOUNT_NAME` | yes | — | Storage account name |
 | `AZURE_ACCOUNT_KEY` | yes | — | Storage account key |
-| `ADLS_CONTAINER` | no | `planetrack` | Container name in ADLS Gen2 |
+| `ADLS_CONTAINER` | no | `planetracker` | Container name in ADLS Gen2 |
 | `PIPELINE_INTERVAL_SECONDS` | no | `60` | How often to poll OpenSky (min 10) |
 | `LOG_LEVEL` | no | `INFO` | Python logging level |
 

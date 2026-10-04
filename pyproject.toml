@@ -1,5 +1,5 @@
 [project]
-name = "planetrack"
+name = "planetracker"
 version = "0.1.0"
 description = "Live aircraft tracking via OpenSky Network with Bronze/Silver/Gold pipeline"
 requires-python = ">=3.12"

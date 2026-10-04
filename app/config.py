@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     # Azure Data Lake Gen2
     azure_account_name: str
     azure_account_key: str
-    adls_container: str = "planetrack"
+    adls_container: str = "planetracker"
 
     # Pipeline
     pipeline_interval_seconds: int = Field(default=60, ge=10)

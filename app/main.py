@@ -36,7 +36,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 
 app = FastAPI(
-    title="PlaneTrack",
+    title="PlaneTracker",
     description="Live aircraft tracking via OpenSky Network with Bronze/Silver/Gold pipeline.",
     version="0.1.0",
     lifespan=lifespan,
